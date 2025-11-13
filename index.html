@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diego Armando Aguayo Alcala - Desarrollador/Soporte</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #007bff; 
+            --secondary-color: #6c757d; 
+            --background-color: #f8f9fa; 
+            --text-color: #343a40; 
+            --light-text-color: #ffffff;
+            --card-background: #ffffff; 
+            --border-color: #e9ecef; 
+            --font-main: 'Roboto', sans-serif;
+            --font-headings: 'Montserrat', sans-serif;
+        }
+
+        /* Estilos Generales y Reset Básico */
+        body {
+            font-family: var(--font-main);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            line-height: 1.6;
+            overflow-x: hidden; 
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3; 
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-headings);
+            color: var(--text-color);
+            margin-top: 0;
+            margin-bottom: 0.5em;
+        }
+
+        /* Contenedor principal para centrar el contenido */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--light-text-color);
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .header p {
+            font-size: 1.1em;
+            color: var(--secondary-color);
+            margin-top: 0;
+        }
+
+        /* Seccion Proyectos */
+        .projects-section {
+            padding: 40px 0;
+            background-color: var(--background-color);
+        }
+
+        .projects-section h2 {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            color: var(--text-color);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--card-background);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+        }
+
+        .project-card h3 {
+            color: var(--primary-color);
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            font-size: 1em;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            flex-grow: 1; /* Para que el párrafo ocupe el espacio disponible */
+        }
+
+        .project-card .links a {
+            display: inline-block;
+            margin-right: 15px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .project-card .links a i {
+            margin-right: 5px;
+        }
+
+        /* Seccion contacto Footer */
+        .footer {
+            background-color: var(--text-color); 
+            color: var(--light-text-color);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--primary-color);
+        }
+
+        .footer h2 {
+            color: var(--light-text-color);
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: var(--light-text-color);
+            font-size: 1.8em;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color); 
+        }
+
+        .footer p {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: var(--secondary-color); 
+        }
+
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .header p {
+                font-size: 1em;
+            }
+
+            .projects-section h2 {
+                font-size: 1.8em;
+            }
+
+            .project-card {
+                padding: 20px;
+            }
+
+            .project-card h3 {
+                font-size: 1.5em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .header p {
+                font-size: 0.9em;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr; 
+            }
+
+            .social-links a {
+                font-size: 1.5em;
+                margin: 0 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1>Diego Armando Aguayo Alcala</h1>
+            <p>Desarrollador Full-Stack | Estudiante de Ingeniería en Informática </p>
+            <p>Soy estudiante de Ingeniería Informática con pasión por la programación y el desarrollo de software.</p>
+        </div>
+    </header>
+
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2>Mis Proyectos Destacados</h2>
+            <div class="project-grid">
+
+                <div class="project-card">
+                    <h3>EduShield</h3>
+                    <p>Una aplicación movil diseñada para mejorar la seguridad en campus universitarios. Permite a estudiantes reportar incidentes, recibir alertas y acceder a recursos de emergencia de manera rápida y eficiente.</p>
+                    <div class="links">
+                        <a href="https://github.com/darmandoalcala/EduShield" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Vitalink</h3>
+                    <p>Un innovador concepto de aplicación móvil para la gestión de recordatorios médicos. Su objetivo es ayudar a pacientes a no olvidar dosis, citas y hábitos saludables, mejorando la adherencia al tratamiento y la calidad de vida.</p>
+                    <div class="links">
+                        <a href="https://github.com/tu-usuario/Vitalink" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Mi Portafolio (este mismo)</h3>
+                    <p>Este es el repositorio de mi propia página personal, donde muestro mis habilidades de desarrollo web y mis proyectos. Está construido con HTML y CSS puro, desplegado con GitHub Pages.</p>
+                    <div class="links">
+                        <a href="https://github.com/tu-usuario/tu-usuario.github.io" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <h2>Hablemos</h2>
+            <p>Estoy siempre abierto/a a nuevas oportunidades y colaboraciones. ¡No dudes en contactarme!</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/diego-armando-aguayo-alcala-191058303/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/darmandoalcala" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:darmandoalcala@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            <p>&copy; 2025 darmandoalcala. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
