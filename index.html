@@ -6,12 +6,11 @@
     <title>Diego Armando Aguayo Alcala - Desarrollador/Soporte</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
         :root {
-            --primary-color: #007bff; 
+            --primary-color: #4a0165; 
             --secondary-color: #6c757d; 
             --background-color: #f8f9fa; 
             --text-color: #343a40; 
@@ -20,6 +19,7 @@
             --border-color: #e9ecef; 
             --font-main: 'Roboto', sans-serif;
             --font-headings: 'Montserrat', sans-serif;
+            --tech-text: #924dab;
         }
 
         /* Estilos Generales y Reset Básico */
@@ -123,7 +123,24 @@
             font-size: 1em;
             color: var(--text-color);
             margin-bottom: 20px;
-            flex-grow: 1; /* Para que el párrafo ocupe el espacio disponible */
+            flex-grow: 1; 
+        }
+
+        .project-card .tech-used {
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(45, 24, 64, 0.22);
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .project-card .tech-used p {
+            display: inline-block;
+            font-weight: 600;
+            font-size: 1em;
+            color: var(--tech-text);
         }
 
         .project-card .links a {
@@ -135,6 +152,49 @@
 
         .project-card .links a i {
             margin-right: 5px;
+        }
+
+        /* --- NUEVA SECCION: UBICACION --- */
+        .location-section {
+            padding: 40px 0;
+            background-color: #ffffff; /* Fondo blanco para diferenciar de la sección gris de proyectos */
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .location-section h2 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .location-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .location-text {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            color: var(--secondary-color);
+            max-width: 600px;
+        }
+
+        .map-container {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 2px solid var(--border-color);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
 
         /* Seccion contacto Footer */
@@ -163,7 +223,7 @@
         }
 
         .social-links a:hover {
-            color: var(--primary-color); 
+            color: var(--tech-text); 
         }
 
         .footer p {
@@ -174,48 +234,21 @@
 
 
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2em;
-            }
-
-            .header p {
-                font-size: 1em;
-            }
-
-            .projects-section h2 {
-                font-size: 1.8em;
-            }
-
-            .project-card {
-                padding: 20px;
-            }
-
-            .project-card h3 {
-                font-size: 1.5em;
-            }
+            .header h1 { font-size: 2em; }
+            .header p { font-size: 1em; }
+            .projects-section h2 { font-size: 1.8em; }
+            .project-card { padding: 20px; }
+            .project-card h3 { font-size: 1.5em; }
+            .map-container { height: 300px; } /* Mapa un poco más pequeño en tablets */
         }
 
         @media (max-width: 480px) {
-            .container {
-                padding: 10px;
-            }
-
-            .header h1 {
-                font-size: 1.8em;
-            }
-
-            .header p {
-                font-size: 0.9em;
-            }
-
-            .project-grid {
-                grid-template-columns: 1fr; 
-            }
-
-            .social-links a {
-                font-size: 1.5em;
-                margin: 0 10px;
-            }
+            .container { padding: 10px; }
+            .header h1 { font-size: 1.8em; }
+            .header p { font-size: 0.9em; }
+            .project-grid { grid-template-columns: 1fr; }
+            .social-links a { font-size: 1.5em; margin: 0 10px; }
+            .map-container { height: 250px; } /* Mapa ajustado para movil */
         }
 
     </style>
@@ -225,8 +258,10 @@
     <header class="header">
         <div class="container">
             <h1>Diego Armando Aguayo Alcala</h1>
-            <p>Desarrollador Full-Stack | Estudiante de Ingeniería en Informática </p>
-            <p>Soy estudiante de Ingeniería Informática con pasión por la programación y el desarrollo de software.</p>
+            <p>Desarrollador Full-Stack | Soporte </p>
+            <p>Soy estudiante de Ingeniería Informática con pasión por la programación y el desarrollo de software.
+            <br/>
+                Apasionado también por el mundo del hardware y de los sistemas en general</p>
         </div>
     </header>
 
@@ -238,27 +273,49 @@
                 <div class="project-card">
                     <h3>EduShield</h3>
                     <p>Una aplicación movil diseñada para mejorar la seguridad en campus universitarios. Permite a estudiantes reportar incidentes, recibir alertas y acceder a recursos de emergencia de manera rápida y eficiente.</p>
+                    <div class="tech-used">
+                        <p><i class="fab fa-android"></i> Expo + React Native JS + db2</p>
+                    </div>
                     <div class="links">
                         <a href="https://github.com/darmandoalcala/EduShield" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                         </div>
                 </div>
 
                 <div class="project-card">
-                    <h3>Vitalink</h3>
-                    <p>Un innovador concepto de aplicación móvil para la gestión de recordatorios médicos. Su objetivo es ayudar a pacientes a no olvidar dosis, citas y hábitos saludables, mejorando la adherencia al tratamiento y la calidad de vida.</p>
+                    <h3>Save Biyuyos</h3>
+                    <p>Es una aplicación para el control de gastos e ingresos personales, esto para ayudar al usuario a llevar un control intuitivo de sus finanzas personales.</p>
+                    <div class="tech-used">
+                        <p><i class="fab fa-android"></i> Kotlin + Android  Studio + SQLite</p>
+                    </div>
                     <div class="links">
-                        <a href="https://github.com/tu-usuario/Vitalink" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/darmandoalcala/SaveBiyuyos" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                         </div>
                 </div>
 
                 <div class="project-card">
-                    <h3>Mi Portafolio (este mismo)</h3>
-                    <p>Este es el repositorio de mi propia página personal, donde muestro mis habilidades de desarrollo web y mis proyectos. Está construido con HTML y CSS puro, desplegado con GitHub Pages.</p>
+                    <h3>Spobrify</h3>
+                    <p> Es una aplicación de escritorio que simula el frontEnd de Spotify para demostrar visualmente el funcionamiento de listas y otras estructuras de datos.</p>
+                    <div class="tech-used">
+                        <p><i class="fab fa-windows"></i> C++ + Forms</p>
+                    </div>
                     <div class="links">
-                        <a href="https://github.com/tu-usuario/tu-usuario.github.io" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/darmandoalcala/Spobrify" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <section class="location-section">
+        <div class="container">
+            <h2>Ubicación</h2>
+            <div class="location-wrapper">
+                <p class="location-text">
+                    Actualmente radico en la Zona Metropolitana de Guadalajara, con disponibilidad para proyectos presenciales o remotos.
+                </p>
+                <div class="map-container">
+                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=17n7c0TkF4GcA3D5mIOZ2Qnnm9DIq9jc&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>                </div>
             </div>
         </div>
     </section>
