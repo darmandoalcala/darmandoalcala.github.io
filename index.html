@@ -3,335 +3,412 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diego Armando Aguayo Alcala - Desarrollador/Soporte</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Diego Armando Aguayo Alcala — Desarrollador Full-Stack</title>
+    <meta name="description" content="Portafolio de Diego Armando Aguayo Alcala. Desarrollador Full-Stack y estudiante de Ingeniería Informática en Guadalajara, México.">
+    <meta name="author" content="Diego Armando Aguayo Alcala">
 
-    <style>
-        :root {
-            --primary-color: #4a0165; 
-            --secondary-color: #6c757d; 
-            --background-color: #f8f9fa; 
-            --text-color: #343a40; 
-            --light-text-color: #ffffff;
-            --card-background: #ffffff; 
-            --border-color: #e9ecef; 
-            --font-main: 'Roboto', sans-serif;
-            --font-headings: 'Montserrat', sans-serif;
-            --tech-text: #924dab;
-        }
+    <!-- Open Graph -->
+    <meta property="og:title" content="Diego Armando Aguayo Alcala — Desarrollador Full-Stack">
+    <meta property="og:description" content="Portafolio personal. Desarrollador Full-Stack y estudiante de Ingeniería Informática.">
+    <meta property="og:type" content="website">
 
-        /* Estilos Generales y Reset Básico */
-        body {
-            font-family: var(--font-main);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-color);
-            line-height: 1.6;
-            overflow-x: hidden; 
-        }
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-        a:hover {
-            color: #0056b3; 
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-headings);
-            color: var(--text-color);
-            margin-top: 0;
-            margin-bottom: 0.5em;
-        }
-
-        /* Contenedor principal para centrar el contenido */
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Header */
-        .header {
-            background-color: var(--light-text-color);
-            padding: 20px 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            text-align: center;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 5px;
-            color: var(--primary-color);
-        }
-
-        .header p {
-            font-size: 1.1em;
-            color: var(--secondary-color);
-            margin-top: 0;
-        }
-
-        /* Seccion Proyectos */
-        .projects-section {
-            padding: 40px 0;
-            background-color: var(--background-color);
-        }
-
-        .projects-section h2 {
-            text-align: center;
-            font-size: 2.2em;
-            margin-bottom: 40px;
-            color: var(--text-color);
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .project-card {
-            background-color: var(--card-background);
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-            padding: 30px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
-        }
-
-        .project-card h3 {
-            color: var(--primary-color);
-            font-size: 1.8em;
-            margin-bottom: 15px;
-        }
-
-        .project-card p {
-            font-size: 1em;
-            color: var(--text-color);
-            margin-bottom: 20px;
-            flex-grow: 1; 
-        }
-
-        .project-card .tech-used {
-            border-radius: 8px;
-            box-shadow: 0 6px 15px rgba(45, 24, 64, 0.22);
-            padding: 5px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-
-        .project-card .tech-used p {
-            display: inline-block;
-            font-weight: 600;
-            font-size: 1em;
-            color: var(--tech-text);
-        }
-
-        .project-card .links a {
-            display: inline-block;
-            margin-right: 15px;
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-
-        .project-card .links a i {
-            margin-right: 5px;
-        }
-
-        /* --- NUEVA SECCION: UBICACION --- */
-        .location-section {
-            padding: 40px 0;
-            background-color: #ffffff; /* Fondo blanco para diferenciar de la sección gris de proyectos */
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-        }
-
-        .location-section h2 {
-            font-size: 2.2em;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
-
-        .location-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .location-text {
-            margin-bottom: 20px;
-            font-size: 1.1em;
-            color: var(--secondary-color);
-            max-width: 600px;
-        }
-
-        .map-container {
-            width: 100%;
-            max-width: 800px;
-            height: 400px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border: 2px solid var(--border-color);
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* Seccion contacto Footer */
-        .footer {
-            background-color: var(--text-color); 
-            color: var(--light-text-color);
-            padding: 40px 0;
-            text-align: center;
-            border-top: 1px solid var(--primary-color);
-        }
-
-        .footer h2 {
-            color: var(--light-text-color);
-            margin-bottom: 20px;
-        }
-
-        .social-links {
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            color: var(--light-text-color);
-            font-size: 1.8em;
-            margin: 0 15px;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--tech-text); 
-        }
-
-        .footer p {
-            margin-top: 30px;
-            font-size: 0.9em;
-            color: var(--secondary-color); 
-        }
-
-
-        @media (max-width: 768px) {
-            .header h1 { font-size: 2em; }
-            .header p { font-size: 1em; }
-            .projects-section h2 { font-size: 1.8em; }
-            .project-card { padding: 20px; }
-            .project-card h3 { font-size: 1.5em; }
-            .map-container { height: 300px; } /* Mapa un poco más pequeño en tablets */
-        }
-
-        @media (max-width: 480px) {
-            .container { padding: 10px; }
-            .header h1 { font-size: 1.8em; }
-            .header p { font-size: 0.9em; }
-            .project-grid { grid-template-columns: 1fr; }
-            .social-links a { font-size: 1.5em; margin: 0 10px; }
-            .map-container { height: 250px; } /* Mapa ajustado para movil */
-        }
-
-    </style>
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <header class="header">
+    <!-- Background Orbs -->
+    <div class="bg-orbs" aria-hidden="true">
+        <div class="orb orb--purple"></div>
+        <div class="orb orb--cyan"></div>
+        <div class="orb orb--small"></div>
+    </div>
+
+    <!-- ============================================
+         NAVBAR
+         ============================================ -->
+    <nav class="navbar" id="navbar">
         <div class="container">
-            <h1>Diego Armando Aguayo Alcala</h1>
-            <p>Desarrollador Full-Stack | Soporte </p>
-            <p>Soy estudiante de Ingeniería Informática con pasión por la programación y el desarrollo de software.
-            <br/>
-                Apasionado también por el mundo del hardware y de los sistemas en general</p>
-        </div>
-    </header>
-
-    <section id="projects" class="projects-section">
-        <div class="container">
-            <h2>Mis Proyectos Destacados</h2>
-            <div class="project-grid">
-
-                <div class="project-card">
-                    <h3>EduShield</h3>
-                    <p>Una aplicación movil diseñada para mejorar la seguridad en campus universitarios. Permite a estudiantes reportar incidentes, recibir alertas y acceder a recursos de emergencia de manera rápida y eficiente.</p>
-                    <div class="tech-used">
-                        <p><i class="fab fa-android"></i> Expo + React Native JS + db2</p>
-                    </div>
-                    <div class="links">
-                        <a href="https://github.com/darmandoalcala/EduShield" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>Save Biyuyos</h3>
-                    <p>Es una aplicación para el control de gastos e ingresos personales, esto para ayudar al usuario a llevar un control intuitivo de sus finanzas personales.</p>
-                    <div class="tech-used">
-                        <p><i class="fab fa-android"></i> Kotlin + Android  Studio + SQLite</p>
-                    </div>
-                    <div class="links">
-                        <a href="https://github.com/darmandoalcala/SaveBiyuyos" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>Spobrify</h3>
-                    <p> Es una aplicación de escritorio que simula el frontEnd de Spotify para demostrar visualmente el funcionamiento de listas y otras estructuras de datos.</p>
-                    <div class="tech-used">
-                        <p><i class="fab fa-windows"></i> C++ + Forms</p>
-                    </div>
-                    <div class="links">
-                        <a href="https://github.com/darmandoalcala/Spobrify" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-
+            <a href="#hero" class="navbar__logo">
+                <span>D</span>AA
+            </a>
+            <div class="navbar__links" id="nav-links">
+                <a href="#about">Sobre mí</a>
+                <a href="#projects">Proyectos</a>
+                <a href="#location">Ubicación</a>
+                <a href="#contact">Contacto</a>
+            </div>
+            <div class="navbar__hamburger" id="hamburger" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
+    </nav>
+
+    <!-- ============================================
+         HERO
+         ============================================ -->
+    <section class="hero" id="hero">
+        <div class="hero__content">
+            <div class="hero__badge">
+                <i class="fas fa-circle"></i>
+                Disponible para proyectos
+            </div>
+            <h1 class="hero__title">
+                Diego Armando<br>
+                <span class="gradient-text">Aguayo Alcala</span>
+            </h1>
+            <div class="hero__role">
+                <span id="typed-text"></span><span class="typed-cursor"></span>
+            </div>
+            <p class="hero__description">
+                Estudiante de Ingeniería Informática con pasión por la programación, el desarrollo de software y el mundo del hardware y los sistemas.
+            </p>
+            <div class="hero__cta-group">
+                <a href="#projects" class="btn btn--primary">
+                    <i class="fas fa-rocket"></i>
+                    Ver Proyectos
+                </a>
+                <a href="#contact" class="btn btn--glass">
+                    <i class="fas fa-envelope"></i>
+                    Contactar
+                </a>
+            </div>
+        </div>
+
     </section>
 
-    <section class="location-section">
+    <!-- ============================================
+         ABOUT
+         ============================================ -->
+    <section class="about" id="about">
         <div class="container">
-            <h2>Ubicación</h2>
-            <div class="location-wrapper">
-                <p class="location-text">
-                    Actualmente radico en la Zona Metropolitana de Guadalajara, con disponibilidad para proyectos presenciales o remotos.
+            <!-- Intro -->
+            <div class="about__intro reveal">
+                <span class="section-label">Sobre mí</span>
+                <h2 class="section-title">Construyendo soluciones <span class="gradient-text">digitales</span></h2>
+                <p class="about__description">
+                    Soy estudiante de Ingeniería Informática apasionado por crear aplicaciones que resuelven problemas reales. Me especializo en desarrollo Full-Stack y soporte técnico, combinando conocimientos de software y hardware para ofrecer soluciones integrales.
                 </p>
-                <div class="map-container">
-                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=17n7c0TkF4GcA3D5mIOZ2Qnnm9DIq9jc&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>                </div>
+                <!-- GitHub-style Embed -->
+                <div class="github-embed glass-card">
+                    <div class="gh-header">
+                        <div class="gh-profile">
+                            <img src="https://github.com/darmandoalcala.png" alt="Diego Armando" class="gh-avatar">
+                            <div class="gh-info">
+                                <h3 class="gh-name">Diego Armando Aguayo Alcala</h3>
+                                <a href="https://github.com/darmandoalcala" target="_blank" rel="noopener noreferrer" class="gh-username">@darmandoalcala</a>
+                                <p class="gh-bio">Estudiante de Ing. Informática · Full-Stack Dev · Hardware enthusiast</p>
+                            </div>
+                        </div>
+                        <a href="https://github.com/darmandoalcala" target="_blank" rel="noopener noreferrer" class="gh-follow-btn">
+                            <i class="fab fa-github"></i> Follow
+                        </a>
+                    </div>
+
+                    <div class="gh-contributions">
+                        <div class="gh-contributions__label">
+                            <span>410 contributions in the last year</span>
+                            <span class="gh-contributions__legend">
+                                <span>Less</span>
+                                <span class="gh-legend-cell" data-level="0"></span>
+                                <span class="gh-legend-cell" data-level="1"></span>
+                                <span class="gh-legend-cell" data-level="2"></span>
+                                <span class="gh-legend-cell" data-level="3"></span>
+                                <span class="gh-legend-cell" data-level="4"></span>
+                                <span>More</span>
+                            </span>
+                        </div>
+                        <div class="gh-graph" id="gh-contribution-graph">
+                            <!-- Generated by JS -->
+                        </div>
+                    </div>
+
+                    <div class="gh-starred">
+                        <h4 class="gh-starred__title">Top Repositories</h4>
+                        <div class="gh-starred__grid">
+                            <a href="https://github.com/darmandoalcala/EduShield" target="_blank" rel="noopener noreferrer" class="gh-repo">
+                                <div class="gh-repo__name"><i class="fas fa-book"></i> EduShield</div>
+                                <p class="gh-repo__desc">Una aplicación móvil para la seguridad y salud de los estudiantes en la Universidad de Guadalajara (UdeG), construida con React Native (Expo) y Node.js.</p>
+                                <div class="gh-repo__meta">
+                                    <span class="gh-repo__lang"><span class="gh-dot" style="background:#f1e05a"></span> JavaScript</span>
+                                    <span><i class="fas fa-star"></i> 2</span>
+                                </div>
+                            </a>
+                            <a href="https://github.com/darmandoalcala/SaveBiyuyos" target="_blank" rel="noopener noreferrer" class="gh-repo">
+                                <div class="gh-repo__name"><i class="fas fa-book"></i> SaveBiyuyos</div>
+                                <p class="gh-repo__desc">Es una aplicación para el control de gastos e ingresos personales, esto para ayudar al usuario a llevar un control intuitivo de sus finanzas personales.</p>
+                                <div class="gh-repo__meta">
+                                    <span class="gh-repo__lang"><span class="gh-dot" style="background:#A97BFF"></span> Kotlin</span>
+                                    <span><i class="fas fa-star"></i> 1</span>
+                                </div>
+                            </a>
+                            <a href="https://github.com/darmandoalcala/Spobrify" target="_blank" rel="noopener noreferrer" class="gh-repo">
+                                <div class="gh-repo__name"><i class="fas fa-book"></i> Spobrify</div>
+                                <p class="gh-repo__desc">Spobrify es un simulador de Spotify que utiliza código C++ y forms .NET. Utiliza estructuras de datos, como listas, colas, etc, para implementar las funcionalidades de Spotify.</p>
+                                <div class="gh-repo__meta">
+                                    <span class="gh-repo__lang"><span class="gh-dot" style="background:#f34b7d"></span> C++</span>
+                                    <span><i class="fas fa-star"></i> 0</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills por Categoría -->
+            <div class="skills-categories">
+
+                <!-- Desarrollo -->
+                <div class="skill-category glass-card reveal reveal-delay-1">
+                    <div class="skill-category__header">
+                        <div class="skill-category__icon"><i class="fas fa-code"></i></div>
+                        <h3 class="skill-category__title">Desarrollo</h3>
+                    </div>
+                    <div class="skill-category__items">
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React & React Native</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Kotlin</span>
+                    </div>
+                </div>
+
+                <!-- Base de Datos -->
+                <div class="skill-category glass-card reveal reveal-delay-2">
+                    <div class="skill-category__header">
+                        <div class="skill-category__icon"><i class="fas fa-database"></i></div>
+                        <h3 class="skill-category__title">Base de Datos</h3>
+                    </div>
+                    <div class="skill-category__items">
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">MariaDB</span>
+                        <span class="skill-tag">SQLite</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">Supabase</span>
+                        <span class="skill-tag">DB2</span>
+                    </div>
+                </div>
+
+                <!-- Diseño -->
+                <div class="skill-category glass-card reveal reveal-delay-3">
+                    <div class="skill-category__header">
+                        <div class="skill-category__icon"><i class="fas fa-palette"></i></div>
+                        <h3 class="skill-category__title">Diseño</h3>
+                    </div>
+                    <div class="skill-category__items">
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">Wix</span>
+                        <span class="skill-tag">WordPress</span>
+                        <span class="skill-tag">Squarespace</span>
+                        <span class="skill-tag">Canva</span>
+                        <span class="skill-tag">Photoshop</span>
+                    </div>
+                </div>
+
+                <!-- Tecnologías -->
+                <div class="skill-category glass-card reveal reveal-delay-1">
+                    <div class="skill-category__header">
+                        <div class="skill-category__icon"><i class="fas fa-microchip"></i></div>
+                        <h3 class="skill-category__title">Tecnologías</h3>
+                    </div>
+                    <div class="skill-category__items">
+                        <span class="skill-tag">Vercel</span>
+                        <span class="skill-tag">Netlify</span>
+                        <span class="skill-tag">Expo</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Github</span>
+                        <span class="skill-tag">Colab</span>
+                    </div>
+                </div>
+
+                <!-- Soporte -->
+                <div class="skill-category glass-card reveal reveal-delay-2">
+                    <div class="skill-category__header">
+                        <div class="skill-category__icon"><i class="fas fa-headset"></i></div>
+                        <h3 class="skill-category__title">Soporte</h3>
+                    </div>
+                    <div class="skill-category__items">
+                        <span class="skill-tag">Redes</span>
+                        <span class="skill-tag">M. Preventivo</span>
+                        <span class="skill-tag">M. Correctivo</span>
+                        <span class="skill-tag">Hardware</span>
+                        <span class="skill-tag">Soporte Remoto</span>
+                    </div>
+                </div>
+
+                <!-- Varios -->
+                <div class="skill-category glass-card reveal reveal-delay-3">
+                    <div class="skill-category__header">
+                        <div class="skill-category__icon"><i class="fas fa-puzzle-piece"></i></div>
+                        <h3 class="skill-category__title">Varios</h3>
+                    </div>
+                    <div class="skill-category__items">
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Google Workspace</span>
+                        <span class="skill-tag">Microsoft Office</span>
+                        <span class="skill-tag">Aseprite</span>
+                        <span class="skill-tag">Godot</span>
+                        <span class="skill-tag">Unity</span>
+                        <span class="skill-tag">Procreate</span>
+
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <footer class="footer">
+    <!-- ============================================
+         PROJECTS
+         ============================================ -->
+    <section class="projects" id="projects">
         <div class="container">
-            <h2>Hablemos</h2>
-            <p>Estoy siempre abierto/a a nuevas oportunidades y colaboraciones. ¡No dudes en contactarme!</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/diego-armando-aguayo-alcala-191058303/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/darmandoalcala" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="mailto:darmandoalcala@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <div class="projects__header reveal">
+                <span class="section-label">Portafolio</span>
+                <h2 class="section-title">Proyectos <span class="gradient-text">Destacados</span></h2>
+                <p class="section-subtitle">Una selección de proyectos que demuestran mis habilidades en desarrollo de software.</p>
+            </div>
+            <div class="projects__grid">
+
+                <!-- EduShield -->
+                <div class="project-card glass-card reveal reveal-delay-1" id="project-edushield">
+                    <div class="project-card__icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="project-card__title">EduShield</h3>
+                    <p class="project-card__description">
+                        Aplicación móvil diseñada para mejorar la seguridad en campus universitarios. Permite a estudiantes reportar incidentes, recibir alertas y acceder a recursos de emergencia de manera rápida y eficiente.
+                    </p>
+                    <div class="project-card__tags">
+                        <span class="tag">Expo</span>
+                        <span class="tag">React Native</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">DB2</span>
+                    </div>
+                    <div class="project-card__links">
+                        <a href="https://github.com/darmandoalcala/EduShield" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
                 </div>
-            <p>&copy; 2025 darmandoalcala. Todos los derechos reservados.</p>
+
+                <!-- Save Biyuyos -->
+                <div class="project-card glass-card reveal reveal-delay-2" id="project-savebiyuyos">
+                    <div class="project-card__icon">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <h3 class="project-card__title">Save Biyuyos</h3>
+                    <p class="project-card__description">
+                        Aplicación para el control de gastos e ingresos personales, diseñada para ayudar al usuario a llevar un control intuitivo de sus finanzas personales.
+                    </p>
+                    <div class="project-card__tags">
+                        <span class="tag">Kotlin</span>
+                        <span class="tag">Android Studio</span>
+                        <span class="tag">SQLite</span>
+                    </div>
+                    <div class="project-card__links">
+                        <a href="https://github.com/darmandoalcala/SaveBiyuyos" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Spobrify -->
+                <div class="project-card glass-card reveal reveal-delay-3" id="project-spobrify">
+                    <div class="project-card__icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3 class="project-card__title">Spobrify</h3>
+                    <p class="project-card__description">
+                        Aplicación de escritorio que simula el front-end de Spotify para demostrar visualmente el funcionamiento de listas y otras estructuras de datos.
+                    </p>
+                    <div class="project-card__tags">
+                        <span class="tag">C++</span>
+                        <span class="tag">Windows Forms</span>
+                    </div>
+                    <div class="project-card__links">
+                        <a href="https://github.com/darmandoalcala/Spobrify" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         LOCATION
+         ============================================ -->
+    <section class="location" id="location">
+        <div class="container">
+            <div class="location__content reveal">
+                <span class="section-label">Ubicación</span>
+                <h2 class="section-title">Basado en <span class="gradient-text">Guadalajara</span></h2>
+                <p class="section-subtitle">Disponible para proyectos presenciales en la Zona Metropolitana o remotos en cualquier parte del mundo.</p>
+            </div>
+            <div class="location__card glass-card reveal reveal-delay-1">
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/d/u/0/embed?mid=17n7c0TkF4GcA3D5mIOZ2Qnnm9DIq9jc&ehbc=2E312F&noprof=1" 
+                        loading="lazy"
+                        title="Ubicación en Guadalajara">
+                    </iframe>
+                </div>
+                <div class="location__info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Zona Metropolitana de Guadalajara, Jalisco, México</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER / CONTACT
+         ============================================ -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer__cta reveal">
+                <span class="section-label">Contacto</span>
+                <h2 class="footer__cta-title">¿Trabajamos <span class="gradient-text">juntos</span>?</h2>
+                <p class="footer__cta-subtitle">
+                    Siempre abierto a nuevas oportunidades y colaboraciones. ¡No dudes en contactarme!
+                </p>
+                <a href="mailto:darmandoalcala@gmail.com" class="btn btn--primary">
+                    <i class="fas fa-paper-plane"></i>
+                    Enviar Email
+                </a>
+            </div>
+            <div class="footer__social reveal reveal-delay-1">
+                <a href="https://www.linkedin.com/in/diego-armando-aguayo-alcala-191058303/" target="_blank" rel="noopener noreferrer" class="social-icon glass-card" aria-label="LinkedIn" id="social-linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/darmandoalcala" target="_blank" rel="noopener noreferrer" class="social-icon glass-card" aria-label="GitHub" id="social-github">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:darmandoalcala@gmail.com" class="social-icon glass-card" aria-label="Email" id="social-email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 darmandoalcala. Todos los derechos reservados.</p>
+            </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
 </body>
 </html>
